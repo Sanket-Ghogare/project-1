@@ -1,0 +1,72 @@
+# =============================================================
+#  Great Ocean Comptech Pvt Ltd — Production Docker Compose
+#  Deployment target: Hostinger VPS (or any Docker-capable host)
+# =============================================================
+#
+#  Usage on the VPS:
+#    1. Copy .env.local to the server (same folder as this file)
+#    2. docker compose up -d --build
+#    3. Point Nginx/Caddy 443 → http://127.0.0.1:3000
+#
+#  MongoDB:
+#    We use MongoDB Atlas (external), so no DB service here.
+#    If you want a local MongoDB, uncomment the `mongo:` service
+#    at the bottom of this file.
+# =============================================================
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gocpl-web:latest
+    container_name: gocpl-web
+    restart: unless-stopped
+
+    # Load every variable from .env.local at container start.
+    # File must exist on the server — never committed to Git.
+    env_file:
+      - .env.local
+
+    # Bind to localhost only. Nginx on the VPS terminates SSL
+    # and forwards 443 → 127.0.0.1:3000.
+    ports:
+      - "127.0.0.1:3000:3000"
+
+    # Sensible production limits (tweak based on your VPS plan).
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+
+    # Send container stdout/stderr to a bounded JSON log file so
+    # logs don't fill up disk space on the VPS.
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # ── Optional: local MongoDB (uncomment if NOT using Atlas) ──
+  # mongo:
+  #   image: mongo:7
+  #   container_name: gocpl-mongo
+  #   restart: unless-stopped
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
+  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+  #   volumes:
+  #     - mongo-data:/data/db
+  #   ports:
+  #     - "127.0.0.1:27017:27017"
+
+# volumes:
+#   mongo-data:
