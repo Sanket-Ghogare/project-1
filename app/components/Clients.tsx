@@ -114,7 +114,7 @@ export default function Clients() {
   return (
     <section
       ref={ref}
-      className="py-16 sm:py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden"
+      className="py-14 sm:py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden"
     >
       {/* decorative blobs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -131,10 +131,10 @@ export default function Clients() {
           <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
             Trusted By Industry Leaders
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight">
             Our Valued Customers
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
             From manufacturing to IT services, 200+ companies across India trust
             Great Ocean Comptech for their hardware rental and managed IT needs.
           </p>

@@ -500,7 +500,7 @@ export default function ServicesContent() {
   return (
     <main>
       {/* ══ HERO ══════════════════════════════════════ */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 pt-28 pb-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 pt-24 sm:pt-28 pb-14 sm:pb-20 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
@@ -526,13 +526,13 @@ export default function ServicesContent() {
             <span className="text-blue-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Our Products &amp; Solutions
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mt-3 mb-5 leading-tight">
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-extrabold text-white mt-3 mb-4 sm:mb-5 leading-tight [text-wrap:balance]">
               Complete IT Infrastructure <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                 Under One Roof
               </span>
             </h1>
-            <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-7 sm:mb-10">
               From hardware rentals and cybersecurity to cloud deployments and managed services —
               Great Ocean Comptech is India&apos;s end-to-end IT partner for businesses of every size.
             </p>

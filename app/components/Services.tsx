@@ -104,7 +104,7 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="services" ref={ref} className="py-16 sm:py-24 bg-gray-50">
+    <section id="services" ref={ref} className="py-14 sm:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
@@ -117,7 +117,7 @@ export default function Services() {
           <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
             Products &amp; Solutions
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2 mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
             Everything IT, Under One Roof
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -136,16 +136,16 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`bg-white border-2 ${c.border} ${c.hover} rounded-2xl p-5 sm:p-7 group cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
+                className={`bg-white border-2 ${c.border} ${c.hover} rounded-2xl p-4 sm:p-7 group cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
               >
-                {/* Icon + badge */}
-                <div className="flex items-start justify-between mb-4 sm:mb-5">
+                {/* Icon + badge — flex-wraps on very narrow screens so long taglines don't overflow */}
+                <div className="flex items-start justify-between gap-3 mb-4 sm:mb-5 flex-wrap">
                   <div
-                    className={`w-13 h-13 sm:w-14 sm:h-14 ${c.icon} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 ${c.icon} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
                   >
                     {cat.accentIcon}
                   </div>
-                  <span className={`${c.tag} text-xs font-bold px-2.5 py-1 rounded-full ml-3 flex-shrink-0 self-start`}>
+                  <span className={`${c.tag} text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 self-start whitespace-nowrap`}>
                     {cat.tagline}
                   </span>
                 </div>

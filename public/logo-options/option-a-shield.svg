@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 110" width="480" height="110" role="img" aria-label="Great Ocean Comptech — Shield">
+  <defs>
+    <linearGradient id="shieldA" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e40af"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+    <linearGradient id="checkA" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#ffffff"/></linearGradient>
+  </defs>
+  <g transform="translate(10, 8)">
+    <path d="M 47 2 L 87 24 L 87 70 L 47 92 L 7 70 L 7 24 Z" fill="url(#shieldA)"/>
+    <path d="M 47 11 L 79 29 L 79 65 L 47 83 L 15 65 L 15 29 Z" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.35"/>
+    <path d="M 18 52 Q 30 42, 42 52 T 66 52 T 90 52" stroke="#67e8f9" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 18 62 Q 30 52, 42 62 T 66 62 T 90 62" stroke="#bae6fd" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 35 36 L 44 44 L 60 28" stroke="url(#checkA)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(115, 0)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Arial, sans-serif">
+    <text x="0" y="48" font-weight="800" font-size="30" fill="#0a1628" letter-spacing="-0.5">GREAT OCEAN</text>
+    <g transform="translate(0, 70)">
+      <text x="0" y="14" font-weight="700" font-size="16" fill="#0891b2" letter-spacing="3.5">COMPTECH</text>
+      <line x1="118" y1="9" x2="138" y2="9" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="146" y="14" font-weight="500" font-size="12" fill="#64748b" letter-spacing="1.5">PVT  LTD</text>
+    </g>
+  </g>
+</svg>

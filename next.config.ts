@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
 
   /* Trust the X-Forwarded-* headers from the Nginx reverse proxy on Hostinger VPS. */
   poweredByHeader: false,
+
+  /* Whitelist external image hosts used by next/image */
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "logo.clearbit.com" },
+    ],
+  },
 };
 
 export default nextConfig;

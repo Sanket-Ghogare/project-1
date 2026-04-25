@@ -8,6 +8,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Belt-and-braces: prevent any accidental horizontal scroll on mobile */
+  overflow-x: hidden;
 }
 
 body {
@@ -17,6 +19,7 @@ body {
   /* Always light mode for this site */
   background: #ffffff;
   color: #111827;
+  overflow-x: hidden;
 }
 
 /* ─── Float animations ──────────────────── */

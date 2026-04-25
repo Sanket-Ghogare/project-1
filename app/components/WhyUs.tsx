@@ -17,9 +17,9 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-16 sm:py-24 bg-white">
+    <section ref={ref} className="py-14 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 xl:gap-16 items-center">
 
           {/* ── Left info card ── */}
           <motion.div
@@ -28,13 +28,13 @@ export default function WhyUs() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-blue-700 to-blue-950 rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-700 to-blue-950 rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden shadow-2xl">
               <div className="absolute -top-16 -right-16 w-40 h-40 bg-white/10 rounded-full" />
               <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-white/10 rounded-full" />
               <div className="relative">
-                <div className="text-5xl sm:text-6xl mb-5 sm:mb-6">🖥️</div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 sm:mb-4">Why Great Ocean Comptech?</h3>
-                <p className="text-blue-100 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">🖥️</div>
+                <h3 className="text-xl sm:text-3xl font-extrabold mb-3 sm:mb-4 leading-tight">Why Great Ocean Comptech?</h3>
+                <p className="text-blue-100 text-sm sm:text-lg leading-relaxed mb-5 sm:mb-8">
                   Unlike generic resellers, we combine enterprise sales expertise with advanced
                   technical service management — delivering customised IT solutions with
                   multilingual support (Marathi, Hindi, English) and long-term commitment.
@@ -54,7 +54,7 @@ export default function WhyUs() {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-green-500 text-white rounded-2xl px-4 py-2 sm:px-5 sm:py-3 font-bold shadow-xl text-xs sm:text-sm animate-float">
+            <div className="absolute -bottom-3 right-3 sm:-bottom-4 sm:-right-4 bg-green-500 text-white rounded-2xl px-3 py-1.5 sm:px-5 sm:py-3 font-bold shadow-xl text-[11px] sm:text-sm animate-float whitespace-nowrap">
               ✓ ISO Certified Quality
             </div>
           </motion.div>
@@ -70,7 +70,7 @@ export default function WhyUs() {
               <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4">
+              <h2 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
                 Your Trusted IT Partner in Pune
               </h2>
               <p className="text-gray-500 text-sm sm:text-lg">
