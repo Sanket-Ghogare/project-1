@@ -64,7 +64,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 left-1/4 w-44 sm:w-72 lg:w-80 h-44 sm:h-72 lg:h-80 bg-cyan-500/15 rounded-full blur-3xl animate-float-delay pointer-events-none" />
 
       {/* ── Layer 6 · Content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 sm:pb-16 grid lg:grid-cols-2 gap-10 xl:gap-16 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 pb-12 sm:pb-16 grid lg:grid-cols-2 gap-10 xl:gap-16 items-center w-full">
         {/* ─── LEFT COLUMN — copy, CTAs, mini stats ─── */}
         <div className="text-center lg:text-left">
           {/* Pill */}

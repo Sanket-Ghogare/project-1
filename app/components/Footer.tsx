@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -26,14 +27,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5 group w-fit">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md group-hover:bg-blue-500 transition-colors">
-                <span className="text-white font-extrabold text-lg">G</span>
-              </div>
-              <div>
-                <span className="font-extrabold text-xl text-white">Great Ocean</span>
-                <span className="block text-xs text-blue-400 font-bold -mt-0.5 tracking-wide">COMPTECH PVT LTD</span>
-              </div>
+            <Link href="/" className="inline-block mb-5 group">
+              <Image
+                src="/logo-transparent.png"
+                alt="Great Ocean Comptech Pvt Ltd"
+                width={180}
+                height={55}
+                className="h-16 w-auto object-contain"
+              />
             </Link>
 
             <p className="text-gray-500 leading-relaxed mb-6 text-sm max-w-xs">

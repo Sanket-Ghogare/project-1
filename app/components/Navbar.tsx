@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
@@ -36,18 +37,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
 
           {/* ── Logo ── */}
-          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-md group-hover:bg-blue-700 transition-colors">
-              <span className="text-white font-extrabold text-base sm:text-lg">G</span>
-            </div>
-            <div>
-              <span className={`font-extrabold text-lg sm:text-xl transition-colors ${solid ? "text-gray-900" : "text-white"}`}>
-                Great Ocean
-              </span>
-              <span className="hidden sm:block text-xs text-blue-500 font-bold -mt-0.5 tracking-wide">
-                COMPTECH PVT LTD
-              </span>
-            </div>
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logo-transparent.png"
+              alt="Great Ocean Comptech Pvt Ltd"
+              width={180}
+              height={55}
+              className="h-16 sm:h-20 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* ── Desktop nav ── */}

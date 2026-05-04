@@ -63,11 +63,7 @@ export default function Stats() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`text-center text-white group ${
-                i === STATS.length - 1
-                  ? "col-span-2 sm:col-span-1"
-                  : ""
-              }`}
+              className={`text-center text-white group${i === STATS.length - 1 ? " col-span-2 sm:col-span-1" : ""}`}
             >
               <div className="text-2xl sm:text-4xl mb-1.5 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
