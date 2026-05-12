@@ -33,7 +33,7 @@ interface Client {
 }
 
 const CLIENTS: Client[] = [
-  { name: "Altrr Software Services Limited",                   short: "Altrr Software",          logo: "/clients/altrr.png" },
+  { name: "Altrr Software Services Limited",                   short: "Altrr Software",          logo: "/clients/alter_logo.jpg" },
   { name: "Gabril Industries Pvt Ltd",                         short: "Gabril Industries",       logo: "/clients/gabril.png" },
   { name: "Orbittal Electromech Engineering Projects Pvt Ltd", short: "Orbittal Electromech",    logo: "/clients/orbittal.png" },
   { name: "Indic Worldview Consulting Pvt Ltd",                short: "Indic Worldview",         logo: "/clients/indic.png" },
