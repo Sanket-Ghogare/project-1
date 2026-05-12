@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -66,7 +66,7 @@ const SERVICE_OPTIONS = [
    • py-3.5 on mobile gives a comfortable 44px+ tap target.
 ─────────────────────────────────────────────────────────── */
 const INPUT =
-  "w-full px-4 py-3.5 sm:py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-gray-900 placeholder-gray-400 text-base sm:text-sm bg-gray-50 focus:bg-white";
+  "w-full px-4 py-3.5 sm:py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-100 outline-none transition-all text-gray-900 placeholder-gray-400 text-base sm:text-sm bg-gray-50 focus:bg-white";
 
 /* ── Default form ───────────────────────────────────────── */
 const EMPTY: FormState = { name: "", email: "", phone: "", service: "", message: "", website: "" };
@@ -348,7 +348,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-xl font-extrabold text-base sm:text-lg transition-all hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+            className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-60 disabled:cursor-not-allowed text-white py-4 rounded-xl font-extrabold text-base sm:text-lg transition-all hover:shadow-lg hover:shadow-purple-200 hover:-translate-y-0.5 flex items-center justify-center gap-2"
           >
             {loading ? (
               <>

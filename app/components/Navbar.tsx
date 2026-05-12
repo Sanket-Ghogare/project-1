@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        solid ? "bg-white shadow-lg py-3" : "bg-transparent py-5"
+        solid ? "bg-white shadow-lg py-2" : "bg-transparent py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,9 +41,9 @@ export default function Navbar() {
             <Image
               src="/logo-transparent.png"
               alt="Great Ocean Comptech Pvt Ltd"
-              width={180}
-              height={55}
-              className="h-16 sm:h-20 w-auto object-contain"
+              width={160}
+              height={48}
+              className="h-9 sm:h-11 w-auto object-contain"
               priority
             />
           </Link>
@@ -59,8 +59,8 @@ export default function Navbar() {
                   className={`font-semibold text-sm transition-colors relative ${
                     solid
                       ? active
-                        ? "text-blue-600"
-                        : "text-gray-700 hover:text-blue-600"
+                        ? "text-purple-600"
+                        : "text-gray-700 hover:text-purple-600"
                       : active
                       ? "text-white"
                       : "text-white/80 hover:text-white"
@@ -68,14 +68,14 @@ export default function Navbar() {
                 >
                   {link.label}
                   {active && (
-                    <span className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${solid ? "bg-blue-600" : "bg-white"}`} />
+                    <span className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${solid ? "bg-purple-600" : "bg-white"}`} />
                   )}
                 </Link>
               );
             })}
             <Link
               href="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-blue-200 hover:-translate-y-0.5"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-purple-200 hover:-translate-y-0.5"
             >
               Get Quote
             </Link>
@@ -112,8 +112,8 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className={`block py-3 px-4 text-sm font-semibold rounded-xl transition-colors ${
                       active
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                        ? "bg-purple-50 text-purple-600"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-purple-600"
                     }`}
                   >
                     {link.label}
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="block bg-blue-600 text-white text-center py-3 rounded-xl text-sm font-extrabold hover:bg-blue-700 transition-colors"
+                  className="block bg-purple-600 text-white text-center py-3 rounded-xl text-sm font-extrabold hover:bg-purple-700 transition-colors"
                 >
                   Get Quote
                 </Link>

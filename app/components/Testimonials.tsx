@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -43,19 +43,19 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-14 sm:py-20 lg:py-24 bg-gray-50">
+    <section ref={ref} className="py-10 sm:py-14 lg:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+          <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
             Testimonials
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
             What Our Clients Say
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -64,14 +64,14 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group"
+              className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-3 sm:mb-4">
@@ -87,7 +87,7 @@ export default function Testimonials() {
               </p>
 
               <div className="flex items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-gray-100">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shadow-md flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shadow-md flex-shrink-0">
                   {t.avatar}
                 </div>
                 <div className="min-w-0">

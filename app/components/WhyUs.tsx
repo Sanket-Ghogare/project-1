@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -17,7 +17,7 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-14 sm:py-24 bg-white">
+    <section ref={ref} className="py-10 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 xl:gap-16 items-center">
 
@@ -28,27 +28,27 @@ export default function WhyUs() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-blue-700 to-blue-950 rounded-3xl p-6 sm:p-10 text-white relative overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-purple-700 to-purple-950 rounded-3xl p-5 sm:p-8 text-white relative overflow-hidden shadow-2xl">
               <div className="absolute -top-16 -right-16 w-40 h-40 bg-white/10 rounded-full" />
               <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-white/10 rounded-full" />
               <div className="relative">
-                <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">🖥️</div>
-                <h3 className="text-xl sm:text-3xl font-extrabold mb-3 sm:mb-4 leading-tight">Why Great Ocean Comptech?</h3>
-                <p className="text-blue-100 text-sm sm:text-lg leading-relaxed mb-5 sm:mb-8">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🖥️</div>
+                <h3 className="text-lg sm:text-2xl font-extrabold mb-2 sm:mb-3 leading-tight">Why Great Ocean Comptech?</h3>
+                <p className="text-purple-100 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                   Unlike generic resellers, we combine enterprise sales expertise with advanced
                   technical service management — delivering customised IT solutions with
                   multilingual support (Marathi, Hindi, English) and long-term commitment.
                 </p>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {[
                     { n: "200+", l: "Happy Clients" },
                     { n: "50+",  l: "Projects Done" },
                     { n: "15+",  l: "Team Members" },
                     { n: "12+",  l: "Years in Business" },
                   ].map((s) => (
-                    <div key={s.l} className="bg-white/10 rounded-2xl p-3 sm:p-4 text-center backdrop-blur-sm">
-                      <div className="text-xl sm:text-2xl font-extrabold">{s.n}</div>
-                      <div className="text-blue-200 text-xs sm:text-sm font-medium mt-0.5">{s.l}</div>
+                    <div key={s.l} className="bg-white/10 rounded-2xl p-2.5 sm:p-3 text-center backdrop-blur-sm">
+                      <div className="text-lg sm:text-xl font-extrabold">{s.n}</div>
+                      <div className="text-purple-200 text-[10px] sm:text-xs font-medium mt-0.5">{s.l}</div>
                     </div>
                   ))}
                 </div>
@@ -65,15 +65,15 @@ export default function WhyUs() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="mb-8 sm:mb-10"
+              className="mb-6 sm:mb-8"
             >
-              <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+              <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
                 Why Choose Us
               </span>
-              <h2 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
                 Your Trusted IT Partner in Pune
               </h2>
-              <p className="text-gray-500 text-sm sm:text-lg">
+              <p className="text-gray-500 text-sm sm:text-sm lg:text-base">
                 We deliver peace of mind through quality hardware, expert networking, and
                 personalised IT services — reducing downtime and adapting to your unique
                 business needs.
@@ -87,13 +87,13 @@ export default function WhyUs() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                  className="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl hover:bg-blue-50 transition-colors group cursor-default"
+                  className="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl hover:bg-purple-50 transition-colors group cursor-default"
                 >
                   <div className="text-2xl sm:text-3xl flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                     {f.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors text-sm">
+                    <h4 className="font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors text-sm">
                       {f.title}
                     </h4>
                     <p className="text-gray-500 text-xs leading-relaxed">{f.description}</p>

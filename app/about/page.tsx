@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://www.gocpl.co.in/about",
     title: "About Great Ocean Comptech | 12+ Years of IT Excellence",
     description:
-      "Founded in 2012, Great Ocean Comptech has served 200+ businesses across India with IT hardware rentals, cybersecurity, cloud & managed IT solutions.",
+      "Founded in 2012 (formerly known as Smartnectic), Great Ocean Comptech has served 200+ businesses across India with IT hardware rentals, cybersecurity, cloud & managed IT solutions.",
   },
 };
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -91,11 +91,11 @@ const CATEGORIES = [
 ];
 
 const COLOR: Record<string, { icon: string; border: string; hover: string; tag: string; dot: string }> = {
-  blue:   { icon: "bg-blue-600 text-white",   border: "border-blue-100",   hover: "hover:border-blue-400 hover:shadow-blue-100",   tag: "bg-blue-50 text-blue-600",   dot: "bg-blue-500"   },
+  blue:   { icon: "bg-purple-600 text-white",   border: "border-purple-100",   hover: "hover:border-purple-400 hover:shadow-purple-100",   tag: "bg-purple-50 text-purple-600",   dot: "bg-purple-500"   },
   red:    { icon: "bg-red-600 text-white",     border: "border-red-100",    hover: "hover:border-red-400 hover:shadow-red-100",     tag: "bg-red-50 text-red-600",     dot: "bg-red-500"    },
   purple: { icon: "bg-purple-600 text-white",  border: "border-purple-100", hover: "hover:border-purple-400 hover:shadow-purple-100",tag: "bg-purple-50 text-purple-600",dot: "bg-purple-500" },
   green:  { icon: "bg-green-600 text-white",   border: "border-green-100",  hover: "hover:border-green-400 hover:shadow-green-100", tag: "bg-green-50 text-green-600", dot: "bg-green-500"  },
-  sky:    { icon: "bg-sky-600 text-white",     border: "border-sky-100",    hover: "hover:border-sky-400 hover:shadow-sky-100",     tag: "bg-sky-50 text-sky-600",     dot: "bg-sky-500"    },
+  sky:    { icon: "bg-violet-600 text-white",     border: "border-violet-100",    hover: "hover:border-sky-400 hover:shadow-violet-100",     tag: "bg-violet-50 text-violet-600",     dot: "bg-violet-500"    },
   amber:  { icon: "bg-amber-500 text-white",   border: "border-amber-100",  hover: "hover:border-amber-400 hover:shadow-amber-100", tag: "bg-amber-50 text-amber-600", dot: "bg-amber-500"  },
 };
 
@@ -104,7 +104,7 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="services" ref={ref} className="py-14 sm:py-24 bg-gray-50">
+    <section id="services" ref={ref} className="py-10 sm:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
@@ -112,12 +112,12 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+          <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
             Products &amp; Solutions
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mt-2 mb-3 sm:mb-4 leading-tight">
             Everything IT, Under One Roof
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -127,7 +127,7 @@ export default function Services() {
         </motion.div>
 
         {/* Category cards — 2 columns on tablet, 3 on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-8 sm:mb-10">
           {CATEGORIES.map((cat, i) => {
             const c = COLOR[cat.color];
             return (
@@ -136,12 +136,12 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`bg-white border-2 ${c.border} ${c.hover} rounded-2xl p-4 sm:p-7 group cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
+                className={`bg-white border-2 ${c.border} ${c.hover} rounded-2xl p-4 sm:p-5 group cursor-default transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}
               >
                 {/* Icon + badge — flex-wraps on very narrow screens so long taglines don't overflow */}
                 <div className="flex items-start justify-between gap-3 mb-4 sm:mb-5 flex-wrap">
                   <div
-                    className={`w-12 h-12 sm:w-14 sm:h-14 ${c.icon} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 ${c.icon} rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
                   >
                     {cat.accentIcon}
                   </div>
@@ -151,7 +151,7 @@ export default function Services() {
                 </div>
 
                 {/* Title & desc */}
-                <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-gray-900 mb-2 leading-snug">
+                <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-gray-900 mb-2 leading-snug">
                   {cat.title}
                 </h3>
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4">
@@ -169,7 +169,7 @@ export default function Services() {
                 </ul>
 
                 {/* Arrow CTA */}
-                <div className="mt-5 flex items-center gap-1 text-blue-600 font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
+                <div className="mt-5 flex items-center gap-1 text-purple-600 font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
                   <Link href="/services" className="hover:underline">View Solutions</Link>
                   <span>→</span>
                 </div>
@@ -187,7 +187,7 @@ export default function Services() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-extrabold text-sm sm:text-base transition-all shadow-lg shadow-blue-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-extrabold text-sm sm:text-base transition-all shadow-lg shadow-purple-200 hover:-translate-y-0.5"
           >
             Explore All Services
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
@@ -36,20 +36,20 @@ export default function ContactContent() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-16 pt-24 sm:py-24 sm:pt-32">
+      <section className="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-16 pt-24 sm:py-24 sm:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-purple-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Get In Touch
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mt-2 mb-3 sm:mb-4 leading-tight">
               Contact Us
             </h1>
-            <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-purple-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
               Ready to rent IT hardware or need a custom quote? We&apos;d love to
               hear from you — our team typically responds within a few hours.
             </p>
@@ -79,7 +79,7 @@ export default function ContactContent() {
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="font-bold text-gray-900 hover:text-blue-600 transition-colors text-sm"
+                        className="font-bold text-gray-900 hover:text-purple-600 transition-colors text-sm"
                       >
                         {info.value}
                       </a>

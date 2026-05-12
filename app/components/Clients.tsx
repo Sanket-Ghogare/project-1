@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -47,11 +47,11 @@ const CLIENTS: Client[] = [
 
 /* Small palette of gradients — cycled by client index. Keeps brand consistent. */
 const GRADIENTS = [
-  "from-blue-600 to-cyan-600",
-  "from-indigo-600 to-blue-700",
-  "from-cyan-600 to-teal-600",
-  "from-blue-700 to-indigo-800",
-  "from-sky-600 to-blue-700",
+  "from-purple-600 to-violet-600",
+  "from-indigo-600 to-purple-700",
+  "from-violet-600 to-teal-600",
+  "from-purple-700 to-indigo-800",
+  "from-violet-600 to-purple-700",
 ];
 
 /** Pull 1–2 uppercase initials from the short name. */
@@ -77,7 +77,7 @@ function LogoCard({ client, gradient }: { client: Client; gradient: string }) {
   return (
     <div
       title={client.name}
-      className="h-28 sm:h-32 flex items-center justify-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 cursor-default"
+      className="h-20 sm:h-24 flex items-center justify-center p-3 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-xl hover:border-purple-300 hover:-translate-y-1 transition-all duration-300 cursor-default"
     >
       {src ? (
         /* eslint-disable-next-line @next/next/no-img-element */
@@ -114,11 +114,11 @@ export default function Clients() {
   return (
     <section
       ref={ref}
-      className="py-14 sm:py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden"
+      className="py-10 sm:py-14 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden"
     >
       {/* decorative blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-100/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -126,12 +126,12 @@ export default function Clients() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-14"
+          className="text-center mb-8 sm:mb-10"
         >
-          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
+          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-purple-600 mb-3">
             Trusted By Industry Leaders
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight">
             Our Valued Customers
           </h2>
           <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">

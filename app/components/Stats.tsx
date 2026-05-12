@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -44,7 +44,7 @@ export default function Stats() {
   return (
     <section
       ref={ref}
-      className="py-10 sm:py-16 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 relative overflow-hidden"
+      className="py-7 sm:py-10 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2 pointer-events-none" />
@@ -65,13 +65,13 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`text-center text-white group${i === STATS.length - 1 ? " col-span-2 sm:col-span-1" : ""}`}
             >
-              <div className="text-2xl sm:text-4xl mb-1.5 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
               </div>
-              <div className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-1 tabular-nums">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-1 tabular-nums">
                 <CountUp target={stat.value} suffix={stat.suffix} active={inView} />
               </div>
-              <div className="text-blue-200 text-[11px] sm:text-sm font-semibold uppercase tracking-wide leading-tight">
+              <div className="text-purple-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide leading-tight">
                 {stat.label}
               </div>
             </motion.div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -25,7 +25,7 @@ const SERVICES = [
     color: "blue",
     icon: "💻",
     badge: "Sales & Rental",
-    badgeColor: "bg-blue-600",
+    badgeColor: "bg-purple-600",
     title: "Laptops",
     tagline: "Sales & Rental — latest models, zero hassle",
     description:
@@ -223,7 +223,7 @@ const SERVICES = [
     color: "sky",
     icon: "☁️",
     badge: "AWS · Azure · GCP",
-    badgeColor: "bg-sky-600",
+    badgeColor: "bg-violet-600",
     title: "Public Cloud Deployments",
     tagline: "AWS, Azure & GCP — architected and managed",
     description:
@@ -242,7 +242,7 @@ const SERVICES = [
     color: "cyan",
     icon: "🏗️",
     badge: "Hybrid",
-    badgeColor: "bg-cyan-600",
+    badgeColor: "bg-violet-600",
     title: "Private & Hybrid Cloud",
     tagline: "On-prem control with cloud-scale flexibility",
     description:
@@ -366,7 +366,7 @@ const FAQS = [
 type ColorKey = "blue" | "indigo" | "violet" | "red" | "rose" | "purple" | "fuchsia" | "orange" | "green" | "teal" | "sky" | "cyan" | "amber";
 
 const COLOR_MAP: Record<ColorKey, { icon: string; border: string; glow: string }> = {
-  blue:    { icon: "bg-blue-600",    border: "border-blue-100",    glow: "hover:shadow-blue-100"    },
+  blue:    { icon: "bg-purple-600",    border: "border-purple-100",    glow: "hover:shadow-purple-100"    },
   indigo:  { icon: "bg-indigo-600",  border: "border-indigo-100",  glow: "hover:shadow-indigo-100"  },
   violet:  { icon: "bg-violet-600",  border: "border-violet-100",  glow: "hover:shadow-violet-100"  },
   red:     { icon: "bg-red-600",     border: "border-red-100",     glow: "hover:shadow-red-100"     },
@@ -376,8 +376,8 @@ const COLOR_MAP: Record<ColorKey, { icon: string; border: string; glow: string }
   orange:  { icon: "bg-orange-500",  border: "border-orange-100",  glow: "hover:shadow-orange-100"  },
   green:   { icon: "bg-green-600",   border: "border-green-100",   glow: "hover:shadow-green-100"   },
   teal:    { icon: "bg-teal-600",    border: "border-teal-100",    glow: "hover:shadow-teal-100"    },
-  sky:     { icon: "bg-sky-600",     border: "border-sky-100",     glow: "hover:shadow-sky-100"     },
-  cyan:    { icon: "bg-cyan-600",    border: "border-cyan-100",    glow: "hover:shadow-cyan-100"    },
+  sky:     { icon: "bg-violet-600",     border: "border-violet-100",     glow: "hover:shadow-violet-100"     },
+  cyan:    { icon: "bg-violet-600",    border: "border-violet-100",    glow: "hover:shadow-violet-100"    },
   amber:   { icon: "bg-amber-500",   border: "border-amber-100",   glow: "hover:shadow-amber-100"   },
 };
 
@@ -409,7 +409,7 @@ function ServiceCard({ svc, index }: { svc: typeof SERVICES[0]; index: number })
           )}
         </div>
         <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-gray-900 mb-1 leading-snug">{svc.title}</h3>
-        <p className="text-xs sm:text-sm font-semibold text-blue-500 mb-2 sm:mb-3">{svc.tagline}</p>
+        <p className="text-xs sm:text-sm font-semibold text-purple-500 mb-2 sm:mb-3">{svc.tagline}</p>
         <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">{svc.description}</p>
       </div>
 
@@ -455,7 +455,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-blue-600 text-xl flex-shrink-0 font-bold leading-none"
+          className="text-purple-600 text-xl flex-shrink-0 font-bold leading-none"
         >
           +
         </motion.span>
@@ -469,7 +469,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.25 }}
             className="overflow-hidden"
           >
-            <p className="px-4 sm:px-6 py-4 text-gray-600 text-sm leading-relaxed bg-blue-50 border-t border-blue-100">
+            <p className="px-4 sm:px-6 py-4 text-gray-600 text-sm leading-relaxed bg-purple-50 border-t border-purple-100">
               {a}
             </p>
           </motion.div>
@@ -500,7 +500,7 @@ export default function ServicesContent() {
   return (
     <main>
       {/* ══ HERO ══════════════════════════════════════ */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 pt-24 sm:pt-28 pb-14 sm:pb-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 pt-24 sm:pt-28 pb-14 sm:pb-20 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
@@ -523,16 +523,16 @@ export default function ServicesContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-purple-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Our Products &amp; Solutions
             </span>
             <h1 className="text-2xl sm:text-5xl lg:text-6xl font-extrabold text-white mt-3 mb-4 sm:mb-5 leading-tight [text-wrap:balance]">
               Complete IT Infrastructure <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">
                 Under One Roof
               </span>
             </h1>
-            <p className="text-blue-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-7 sm:mb-10">
+            <p className="text-purple-100 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-7 sm:mb-10">
               From hardware rentals and cybersecurity to cloud deployments and managed services —
               Great Ocean Comptech is India&apos;s end-to-end IT partner for businesses of every size.
             </p>
@@ -575,14 +575,14 @@ export default function ServicesContent() {
                 whileTap={{ scale: 0.95 }}
                 className={`flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
                   activeCategory === cat.id
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-200"
-                    : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600"
+                    ? "bg-purple-600 text-white shadow-lg shadow-purple-200"
+                    : "bg-white text-gray-600 border border-gray-200 hover:border-purple-300 hover:text-purple-600"
                 }`}
               >
                 <span>{cat.icon}</span>
                 <span>{cat.label}</span>
                 {activeCategory === cat.id && cat.id !== "All" && (
-                  <span className="bg-blue-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-1">
+                  <span className="bg-purple-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-1">
                     {SERVICES.filter((s) => s.category === cat.id).length}
                   </span>
                 )}
@@ -624,7 +624,7 @@ export default function ServicesContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Process</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Process</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">How We Work</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">
               Simple, transparent, and fast — from first contact to live deployment.
@@ -633,7 +633,7 @@ export default function ServicesContent() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
             {/* Connector (desktop) */}
-            <div className="hidden lg:block absolute top-[38px] left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-blue-100 via-blue-400 to-blue-100" />
+            <div className="hidden lg:block absolute top-[38px] left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-purple-100 via-purple-400 to-purple-100" />
 
             {STEPS.map((step, i) => (
               <motion.div
@@ -644,10 +644,10 @@ export default function ServicesContent() {
                 className="text-center relative"
               >
                 <div className="relative inline-flex items-center justify-center mb-4 sm:mb-5">
-                  <div className="w-18 h-18 sm:w-20 sm:h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-blue-200 relative z-10">
+                  <div className="w-18 h-18 sm:w-20 sm:h-20 bg-purple-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-purple-200 relative z-10">
                     {step.icon}
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-extrabold z-20 border-2 border-white">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-extrabold z-20 border-2 border-white">
                     {step.n}
                   </div>
                 </div>
@@ -668,7 +668,7 @@ export default function ServicesContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Engagement</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Engagement</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">
               How You Can Work With Us
             </h2>
@@ -686,7 +686,7 @@ export default function ServicesContent() {
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className={`rounded-2xl p-6 sm:p-8 relative overflow-hidden transition-all hover:-translate-y-1 ${
                   e.highlight
-                    ? "bg-blue-600 text-white shadow-2xl shadow-blue-200 sm:scale-105"
+                    ? "bg-purple-600 text-white shadow-2xl shadow-purple-200 sm:scale-105"
                     : "bg-white border border-gray-200 shadow-sm hover:shadow-lg"
                 }`}
               >
@@ -699,13 +699,13 @@ export default function ServicesContent() {
                 <h3 className={`text-xl font-extrabold mb-1 ${e.highlight ? "text-white" : "text-gray-900"}`}>
                   {e.name}
                 </h3>
-                <p className={`text-sm mb-5 ${e.highlight ? "text-blue-100" : "text-gray-400"}`}>
+                <p className={`text-sm mb-5 ${e.highlight ? "text-purple-100" : "text-gray-400"}`}>
                   {e.tagline}
                 </p>
                 <ul className="space-y-2.5 mb-8">
                   {e.points.map((p) => (
-                    <li key={p} className={`flex items-start gap-2 text-sm ${e.highlight ? "text-blue-50" : "text-gray-600"}`}>
-                      <span className={e.highlight ? "text-blue-200 mt-0.5" : "text-green-500 mt-0.5"}>✓</span>
+                    <li key={p} className={`flex items-start gap-2 text-sm ${e.highlight ? "text-purple-50" : "text-gray-600"}`}>
+                      <span className={e.highlight ? "text-purple-200 mt-0.5" : "text-green-500 mt-0.5"}>✓</span>
                       {p}
                     </li>
                   ))}
@@ -714,8 +714,8 @@ export default function ServicesContent() {
                   href="/contact"
                   className={`block text-center py-3 rounded-xl font-extrabold text-sm transition-all ${
                     e.highlight
-                      ? "bg-white text-blue-600 hover:bg-blue-50"
-                      : "bg-blue-600 text-white hover:bg-blue-700"
+                      ? "bg-white text-purple-600 hover:bg-purple-50"
+                      : "bg-purple-600 text-white hover:bg-purple-700"
                   }`}
                 >
                   {e.cta} →
@@ -735,7 +735,7 @@ export default function ServicesContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-12"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">FAQ</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">FAQ</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">
               Frequently Asked Questions
             </h2>
@@ -760,7 +760,7 @@ export default function ServicesContent() {
       </section>
 
       {/* ══ CTA ════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(255,255,255,0.04) 0%, transparent 50%)" }}
         />
@@ -768,13 +768,13 @@ export default function ServicesContent() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
             Ready to Transform Your IT Infrastructure?
           </h2>
-          <p className="text-blue-100 text-sm sm:text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-purple-100 text-sm sm:text-lg mb-8 max-w-2xl mx-auto">
             Talk to our team for a free consultation and custom quote. From hardware to cloud — we handle everything.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-blue-700 px-8 py-4 rounded-xl font-extrabold text-base sm:text-lg hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-0.5 text-center"
+              className="bg-white text-purple-700 px-8 py-4 rounded-xl font-extrabold text-base sm:text-lg hover:bg-purple-50 transition-all shadow-xl hover:-translate-y-0.5 text-center"
             >
               Get Free Consultation
             </Link>
@@ -785,7 +785,7 @@ export default function ServicesContent() {
               📞 Call Us Now
             </a>
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-blue-200 text-xs sm:text-sm font-semibold">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-purple-200 text-xs sm:text-sm font-semibold">
             {["✓ Hardware · Security · Storage", "✓ Managed Services", "✓ Cloud & Mail", "✓ Free Consultation"].map((b) => (
               <span key={b}>{b}</span>
             ))}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -9,7 +9,7 @@ import Link from "next/link";
 ══════════════════════════════════════════════════ */
 
 const MILESTONES = [
-  { year: "2012", event: "Founded in Pune with a clear vision to make reliable IT solutions accessible to every business." },
+  { year: "2012", event: "Founded in Pune (formerly known as Smartnectic) with a clear vision to make reliable IT solutions accessible to every business." },
   { year: "2014", event: "Expanded into networking and security solutions, serving our first corporate clients." },
   { year: "2016", event: "Launched Hardware Rental division — flexible, zero-CapEx IT for SMEs and events." },
   { year: "2018", event: "Onboarded 50+ corporate clients across Pune, from startups to enterprise accounts." },
@@ -81,12 +81,12 @@ const DIRECTORS = [
     role: "Director",
     avatar: "BC",
     exp: "12+ Years of Experience",
-    gradient: "from-blue-600 to-blue-800",
+    gradient: "from-purple-600 to-purple-800",
     specialties: [
-      { label: "Hardware Sales", color: "bg-blue-100 text-blue-700" },
+      { label: "Hardware Sales", color: "bg-purple-100 text-purple-700" },
       { label: "Security Solutions", color: "bg-red-100 text-red-700" },
       { label: "Software Sales", color: "bg-indigo-100 text-indigo-700" },
-      { label: "Networking Solutions", color: "bg-cyan-100 text-cyan-700" },
+      { label: "Networking Solutions", color: "bg-violet-100 text-cyan-700" },
     ],
     bio: "With 12+ years of deep expertise across hardware sales, cybersecurity, software, and networking, Balaji has built and managed IT infrastructure for corporate and SME clients across Pune. He specialises in delivering customised, end-to-end IT solutions that align with each client's operational needs.",
     focus: "Corporate & SME IT Infrastructure",
@@ -95,12 +95,12 @@ const DIRECTORS = [
     name: "Mahendra Sonwane",
     role: "Director",
     avatar: "MS",
-    gradient: "from-indigo-600 to-blue-700",
+    gradient: "from-indigo-600 to-purple-700",
     exp: "12+ Years of Experience",
     specialties: [
       { label: "Corporate Sales", color: "bg-green-100 text-green-700" },
       { label: "Enterprise B2B", color: "bg-emerald-100 text-emerald-700" },
-      { label: "Cloud Services", color: "bg-sky-100 text-sky-700" },
+      { label: "Cloud Services", color: "bg-violet-100 text-violet-700" },
       { label: "Mail Solutions", color: "bg-amber-100 text-amber-700" },
     ],
     bio: "Mahendra brings 12+ years of proven success in corporate and enterprise B2B sales, IT hardware management, cloud services, and mail solutions. He has a strong track record of building long-term client relationships and architecting scalable business strategies that drive growth for his clients.",
@@ -130,7 +130,7 @@ export default function AboutContent() {
     <main>
 
       {/* ══ HERO ══════════════════════════════════════ */}
-      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 py-20 pt-28 sm:pt-32 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 py-20 pt-28 sm:pt-32 relative overflow-hidden">
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -157,13 +157,13 @@ export default function AboutContent() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-blue-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
+              <span className="text-purple-300 font-bold text-xs sm:text-sm uppercase tracking-widest">
                 About Great Ocean Comptech
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mt-3 mb-5 leading-tight">
                 12 Years of Reliable IT Excellence in Pune
               </h1>
-              <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed mb-8">
+              <p className="text-purple-100 text-sm sm:text-base lg:text-lg leading-relaxed mb-8">
                 We are a trusted provider of hardware infrastructure, cybersecurity, cloud, storage,
                 and managed IT services — delivering customised, end-to-end solutions to businesses
                 across Pune with transparency, technical depth, and long-term partnership.
@@ -171,7 +171,7 @@ export default function AboutContent() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="bg-white text-blue-700 px-7 py-3.5 rounded-xl font-extrabold text-sm sm:text-base hover:bg-blue-50 transition-colors shadow-lg hover:-translate-y-0.5 text-center"
+                  className="bg-white text-purple-700 px-7 py-3.5 rounded-xl font-extrabold text-sm sm:text-base hover:bg-purple-50 transition-colors shadow-lg hover:-translate-y-0.5 text-center"
                 >
                   Work With Us
                 </Link>
@@ -203,7 +203,7 @@ export default function AboutContent() {
                 >
                   <div className="text-3xl sm:text-4xl font-extrabold">{s.n}</div>
                   <div className="font-bold mt-1 text-sm sm:text-base">{s.l}</div>
-                  <div className="text-blue-200 text-xs sm:text-sm mt-0.5">{s.sub}</div>
+                  <div className="text-purple-200 text-xs sm:text-sm mt-0.5">{s.sub}</div>
                 </div>
               ))}
             </motion.div>
@@ -220,7 +220,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Who We Are
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">
@@ -234,9 +234,9 @@ export default function AboutContent() {
               initial={{ opacity: 0, x: -30 }}
               animate={missionInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-3xl p-7 sm:p-10 border border-blue-100"
+              className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-3xl p-7 sm:p-10 border border-purple-100"
             >
-              <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-md shadow-blue-200">
+              <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-md shadow-purple-200">
                 🎯
               </div>
               <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-3 sm:mb-4">Our Mission</h3>
@@ -248,8 +248,8 @@ export default function AboutContent() {
               </p>
               <ul className="space-y-2">
                 {["Quality hardware, every time", "Seamless networking services", "Professional support & long-term trust"].map((pt) => (
-                  <li key={pt} className="flex items-center gap-2 text-sm text-blue-700 font-semibold">
-                    <span className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0" />
+                  <li key={pt} className="flex items-center gap-2 text-sm text-purple-700 font-semibold">
+                    <span className="w-1.5 h-1.5 bg-purple-600 rounded-full flex-shrink-0" />
                     {pt}
                   </li>
                 ))}
@@ -295,7 +295,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Why We Exist
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">
@@ -357,13 +357,13 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={problemInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 sm:mt-10 bg-blue-600 rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto text-white"
+            className="mt-8 sm:mt-10 bg-purple-600 rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto text-white"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="text-4xl flex-shrink-0">💡</div>
               <div>
                 <h4 className="font-extrabold text-lg sm:text-xl mb-1">Our Value Proposition</h4>
-                <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+                <p className="text-purple-100 text-sm sm:text-base leading-relaxed">
                   We deliver <strong className="text-white">peace of mind</strong> through quality hardware, expert networking,
                   and personalised IT services. Our customers benefit from <strong className="text-white">reduced downtime</strong>,
                   transparent pricing, and professional support that adapts to their specific business needs.
@@ -383,7 +383,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">
               Our Differentiators
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">
@@ -402,7 +402,7 @@ export default function AboutContent() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={uspInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 sm:p-8 text-white overflow-hidden group hover:-translate-y-1 transition-all shadow-lg shadow-blue-200"
+                className="relative bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 sm:p-8 text-white overflow-hidden group hover:-translate-y-1 transition-all shadow-lg shadow-purple-200"
               >
                 {/* Decorative circle */}
                 <div className="absolute -top-8 -right-8 w-28 h-28 bg-white/10 rounded-full" />
@@ -412,7 +412,7 @@ export default function AboutContent() {
                     {u.icon}
                   </div>
                   <h3 className="text-lg sm:text-xl font-extrabold mb-3">{u.title}</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed">{u.desc}</p>
+                  <p className="text-purple-100 text-sm leading-relaxed">{u.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -429,7 +429,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Core Values</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Core Values</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">What We Stand For</h2>
           </motion.div>
 
@@ -460,7 +460,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Our Journey</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Our Journey</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">
               12 Years, One Goal
             </h2>
@@ -468,7 +468,7 @@ export default function AboutContent() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[27px] sm:left-[31px] top-2 bottom-2 w-0.5 bg-blue-100" />
+            <div className="absolute left-[27px] sm:left-[31px] top-2 bottom-2 w-0.5 bg-purple-100" />
 
             <div className="space-y-5 sm:space-y-6">
               {MILESTONES.map((m, i) => (
@@ -481,11 +481,11 @@ export default function AboutContent() {
                 >
                   {/* Dot column */}
                   <div className="flex flex-col items-center flex-shrink-0 w-14 sm:w-16">
-                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 border-white shadow-md z-10 mt-4" />
+                    <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-purple-600 rounded-full border-2 border-white shadow-md z-10 mt-4" />
                   </div>
                   {/* Card */}
-                  <div className="bg-gray-50 hover:bg-blue-50 rounded-2xl p-4 sm:p-5 flex-1 transition-colors border border-gray-100 cursor-default">
-                    <div className="text-blue-600 font-extrabold text-sm mb-1">{m.year}</div>
+                  <div className="bg-gray-50 hover:bg-purple-50 rounded-2xl p-4 sm:p-5 flex-1 transition-colors border border-gray-100 cursor-default">
+                    <div className="text-purple-600 font-extrabold text-sm mb-1">{m.year}</div>
                     <div className="text-gray-700 text-xs sm:text-sm leading-relaxed">{m.event}</div>
                   </div>
                 </motion.div>
@@ -504,7 +504,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10 sm:mb-14"
           >
-            <span className="text-blue-600 font-bold text-xs sm:text-sm uppercase tracking-widest">The Founders</span>
+            <span className="text-purple-600 font-bold text-xs sm:text-sm uppercase tracking-widest">The Founders</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 mb-3">
               Meet Our Leadership
             </h2>
@@ -531,7 +531,7 @@ export default function AboutContent() {
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white leading-tight">
                       {d.name}
                     </h3>
-                    <p className="text-blue-100 font-semibold text-sm mt-0.5">{d.role}</p>
+                    <p className="text-purple-100 font-semibold text-sm mt-0.5">{d.role}</p>
                     <div className="flex items-center gap-2 mt-2">
                       <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">
                         {d.exp}
@@ -544,7 +544,7 @@ export default function AboutContent() {
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Focus Area</span>
-                    <span className="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-full">{d.focus}</span>
+                    <span className="bg-purple-50 text-purple-700 text-xs font-bold px-2.5 py-1 rounded-full">{d.focus}</span>
                   </div>
 
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-5">{d.bio}</p>
@@ -571,7 +571,7 @@ export default function AboutContent() {
       </section>
 
       {/* ══ CTA ════════════════════════════════════════ */}
-      <section className="py-14 sm:py-20 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -583,14 +583,14 @@ export default function AboutContent() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
             Let&apos;s Build Your IT Infrastructure Together
           </h2>
-          <p className="text-blue-100 text-sm sm:text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-purple-100 text-sm sm:text-lg mb-8 max-w-2xl mx-auto">
             Join 200+ businesses across India who trust Great Ocean Comptech for reliable,
             customised IT solutions — from hardware to cloud.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-blue-700 px-8 sm:px-10 py-4 rounded-xl font-extrabold text-sm sm:text-lg hover:bg-blue-50 transition-colors shadow-xl hover:-translate-y-0.5 text-center"
+              className="bg-white text-purple-700 px-8 sm:px-10 py-4 rounded-xl font-extrabold text-sm sm:text-lg hover:bg-purple-50 transition-colors shadow-xl hover:-translate-y-0.5 text-center"
             >
               Contact Us Today
             </Link>
