@@ -54,9 +54,10 @@ USER nextjs
 EXPOSE 3000
 
 # Simple HTTP healthcheck so Docker / Compose can auto-restart
-# if the app stops responding.
+# if the app stops responding. Hits a dedicated /api/health endpoint
+# so probes don't render the full homepage every 30s.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-  CMD node -e "fetch('http://127.0.0.1:3000/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+  CMD node -e "fetch('http://127.0.0.1:3000/api/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
 
 # Standalone build exposes server.js at the project root.
 CMD ["node", "server.js"]

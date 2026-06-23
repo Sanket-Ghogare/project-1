@@ -64,6 +64,55 @@ button, a {
 ::-webkit-scrollbar-thumb  { background: #9333ea; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #7e22ce; }
 
+/* ─── Print / PDF styles (used by /sla page) ── */
+@media print {
+  /* Hide everything except the SLA document */
+  nav,
+  footer,
+  .whatsapp-float,
+  .print-hide {
+    display: none !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+    overflow: visible !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Keep purple section headers visible in print */
+  .print-section-header {
+    background-color: #7e22ce !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-purple-bg {
+    background-color: #f5f3ff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Avoid page breaks inside sections */
+  .print-no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 15mm 12mm;
+    size: A4;
+  }
+}
+
 /* ─── Prevent dark-mode overrides ────────── */
 @media (prefers-color-scheme: dark) {
   body {

@@ -33,12 +33,25 @@ const RATE_LIMIT_WINDOW = 60 * 60 * 1000;  // 1 hour
 const requestLog = new Map<string, number[]>();
 
 function getClientIp(request: NextRequest): string {
+  // X-Forwarded-For is a list; Nginx APPENDS the real peer to the end.
+  // Trust the last entry (the one Nginx itself wrote) — earlier entries
+  // can be forged by the client to bypass rate limiting.
   const fwd = request.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0].trim();
+  if (fwd) {
+    const parts = fwd.split(",").map((s) => s.trim()).filter(Boolean);
+    if (parts.length) return parts[parts.length - 1];
+  }
   const real = request.headers.get("x-real-ip");
   if (real) return real.trim();
   return "unknown";
 }
+
+const ALLOWED_ORIGINS = new Set(
+  (process.env.ALLOWED_ORIGINS ?? "https://www.gocpl.co.in,https://gocpl.co.in")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
+);
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -65,7 +78,7 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    /* ── 0. Env check ── */
+    /* ── 0a. Env check ── */
     try {
       validateEnv();
     } catch (e) {
@@ -74,6 +87,13 @@ export async function POST(request: NextRequest) {
         { error: "Service temporarily unavailable. Please call +91 98342 20116." },
         { status: 503 }
       );
+    }
+
+    /* ── 0b. Origin check — block cross-site / scripted POSTs ── */
+    const origin = request.headers.get("origin");
+    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+      console.warn(`[Contact API] Rejected origin: ${origin}`);
+      return NextResponse.json({ error: "Forbidden." }, { status: 403 });
     }
 
     /* ── 1. Rate limit ── */

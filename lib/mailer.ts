@@ -25,10 +25,54 @@ function getTransporter(): Transporter {
     port,
     secure: port === 465,   // true for SSL, false for TLS (587)
     auth: { user, pass },
-    tls: { rejectUnauthorized: false }, // allows self-signed certs on some hosts
+    // Production: validate the SMTP server certificate (default).
+    // Dev-only escape hatch for hosts with self-signed certs.
+    tls: { rejectUnauthorized: process.env.NODE_ENV === "production" },
   });
 
   return _transport;
+}
+
+/* Escape user-supplied strings before interpolating into HTML. */
+function esc(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/* Build a plain-text fallback so clients that prefer text don't
+   render the HTML version at all. */
+function buildEnquiryText(data: EnquiryData): string {
+  return [
+    "New Enquiry — Great Ocean Comptech Pvt Ltd",
+    `Received: ${timestamp()}`,
+    "",
+    `Name:    ${data.name}`,
+    `Email:   ${data.email}`,
+    data.phone   ? `Phone:   ${data.phone}`     : "",
+    data.service ? `Service: ${data.service}`   : "",
+    "",
+    "Message:",
+    data.message,
+  ].filter(Boolean).join("\n");
+}
+
+function buildConfirmationText(data: ConfirmationData): string {
+  return [
+    `Hi ${data.name},`,
+    "",
+    "Thank you for contacting Great Ocean Comptech Pvt Ltd.",
+    "We have received your enquiry and will get back to you within 24 hours.",
+    data.service ? `\nService requested: ${data.service}` : "",
+    "",
+    `Need an immediate response? Call ${PHONE_DISPLAY} or WhatsApp ${WHATSAPP}.`,
+    "",
+    "— Great Ocean Comptech Pvt Ltd",
+    ADDRESS,
+  ].filter(Boolean).join("\n");
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -62,7 +106,7 @@ export interface EnquiryData {
 }
 
 export async function sendCompanyEmail(data: EnquiryData): Promise<void> {
-  const subject = `🔔 New Enquiry — ${data.name}${data.service ? ` (${data.service})` : ""}`;
+  const subject = `New Enquiry — ${data.name}${data.service ? ` (${data.service})` : ""}`.replace(/[\r\n]/g, " ");
 
   const fieldRow = (label: string, value: string, isLink?: string) => `
     <tr>
@@ -124,10 +168,10 @@ export async function sendCompanyEmail(data: EnquiryData): Promise<void> {
           </h2>
 
           <table width="100%" cellpadding="0" cellspacing="0" border="0">
-            ${fieldRow("Name", data.name)}
-            ${fieldRow("Email", data.email, `mailto:${data.email}`)}
-            ${data.phone ? fieldRow("Phone", data.phone, `tel:${data.phone}`) : ""}
-            ${data.service ? fieldRow("Service", data.service) : ""}
+            ${fieldRow("Name", esc(data.name))}
+            ${fieldRow("Email", esc(data.email), `mailto:${encodeURIComponent(data.email)}`)}
+            ${data.phone ? fieldRow("Phone", esc(data.phone), `tel:${encodeURIComponent(data.phone)}`) : ""}
+            ${data.service ? fieldRow("Service", esc(data.service)) : ""}
           </table>
 
           <!-- Message -->
@@ -136,15 +180,15 @@ export async function sendCompanyEmail(data: EnquiryData): Promise<void> {
               Message
             </p>
             <div style="background:#f0f7ff;border-left:4px solid #3b82f6;border-radius:0 10px 10px 0;padding:18px 20px;font-size:14px;color:#1e3a5f;line-height:1.75;white-space:pre-wrap;">
-${data.message}
+${esc(data.message)}
             </div>
           </div>
 
           <!-- CTA -->
           <div style="margin-top:32px;text-align:center;">
-            <a href="mailto:${data.email}?subject=Re%3A%20Your%20Enquiry%20—%20Great%20Ocean%20Comptech"
+            <a href="mailto:${encodeURIComponent(data.email)}?subject=Re%3A%20Your%20Enquiry%20—%20Great%20Ocean%20Comptech"
                style="display:inline-block;background:#1e40af;color:#ffffff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
-              Reply to ${data.name} →
+              Reply to ${esc(data.name)} →
             </a>
             &nbsp;&nbsp;
             ${data.phone ? `<a href="https://wa.me/91${data.phone.replace(/\D/g, "")}"
@@ -179,6 +223,7 @@ ${data.message}
     replyTo: data.email,
     subject,
     html,
+    text: buildEnquiryText(data),
   });
 }
 
@@ -232,7 +277,7 @@ export async function sendUserEmail(data: ConfirmationData): Promise<void> {
 
           <!-- Greeting -->
           <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 12px 0;">
-            Hi ${data.name}, 👋
+            Hi ${esc(data.name)}, 👋
           </p>
           <p style="font-size:15px;color:#4b5563;line-height:1.75;margin:0 0 24px 0;">
             Thank you for contacting <strong>Great Ocean Comptech Pvt Ltd</strong>. We have received your
@@ -247,7 +292,7 @@ export async function sendUserEmail(data: ConfirmationData): Promise<void> {
               <tr>
                 <td style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:16px 20px;">
                   <p style="margin:0;font-size:14px;color:#1e40af;font-weight:700;">
-                    📦 Service Requested: ${data.service}
+                    📦 Service Requested: ${esc(data.service)}
                   </p>
                 </td>
               </tr>
@@ -378,5 +423,6 @@ export async function sendUserEmail(data: ConfirmationData): Promise<void> {
     to:      data.email,
     subject,
     html,
+    text: buildConfirmationText(data),
   });
 }
